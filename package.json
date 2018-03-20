@@ -1,0 +1,25 @@
+{
+  "name": "Movies Pas",
+  "version": "0.0.0",
+  "description": "Test App about Movies",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nulpas/movie.git"
+  },
+  "scripts": {
+    "postinstall": "bower install && bower prune",
+    "build": "gulp deploy:dist"
+  },
+  "keywords": [
+    "gulp",
+    "angular"
+  ],
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)"
+  "contributors": [],
+  "license": "MIT",
+  "dependencies": {
+    "gulp-compiler": "^0.7.8"
+  },
+  "devDependencies": {}
+}
