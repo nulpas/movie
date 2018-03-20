@@ -1,6 +1,6 @@
 {
-  "name": "Movies Pas",
-  "version": "0.0.0",
+  "name": "movies-pas",
+  "version": "0.0.1",
   "description": "Test App about Movies",
   "homepage": "",
   "repository": {
@@ -15,7 +15,7 @@
     "gulp",
     "angular"
   ],
-  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)"
+  "author": "Nul Pàs <manu@lunaeme.com> (https://github.com/nulpas)",
   "contributors": [],
   "license": "MIT",
   "dependencies": {

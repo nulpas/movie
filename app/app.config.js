@@ -10,7 +10,7 @@
      * @requires $apiProvider
      * @requires $alertProvider
      * @requires $locationProvider
-     * @requires $urlRouterProvider
+     * //@requires $urlRouterProvider
      *
      * @description
      * General config statement.
@@ -25,7 +25,7 @@
     '$translateProvider'
   ];
 
-  function appConfig($apiProvider, $alertProvider, $locationProvider, $urlRouterProvider, $translateProvider) {
+  function appConfig($apiProvider, $alertProvider, $locationProvider, $urlRouterProvider) {
     /* Api Connector Config: */
     $apiProvider.setApiConfig({
       localJson: 'json',

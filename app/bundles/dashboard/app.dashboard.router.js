@@ -23,7 +23,7 @@
         views: {
           'content@app': {
             templateUrl: 'bundles/dashboard/app.dashboard.view.tpl.html',
-            controller: 'dashboardController',
+            controller: 'DashboardController',
             controllerAs: 'dashboard'
           }
         }

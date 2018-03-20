@@ -25,7 +25,7 @@
         views: {
           root: {
             templateUrl: 'bundles/login/app.login.view.tpl.html',
-            controller: 'loginController',
+            controller: 'LoginController',
             controllerAs: 'login'
           }
         }
@@ -36,7 +36,7 @@
         views: {
           root: {
             templateUrl: 'bundles/layout/app.layout.view.tpl.html',
-            controller: 'layoutController',
+            controller: 'LayoutController',
             controllerAs: 'layout'
           }
         }
@@ -47,7 +47,7 @@
         views: {
           'content@app': {
             templateUrl: 'bundles/dashboard/app.dashboard.view.tpl.html',
-            controller: 'dashboardController',
+            controller: 'DashboardController',
             controllerAs: 'dashboard'
           }
         }
