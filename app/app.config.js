@@ -29,7 +29,7 @@
     /* Api Connector Config: */
     $apiProvider.setApiConfig({
       localJson: 'json',
-      apiBaseUrl: 'https://api.themoviedb.org'
+      apiBaseUrl: 'https://api.themoviedb.org/3'
     });
 
     /* Toast Alert Config: */
