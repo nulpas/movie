@@ -7,7 +7,7 @@
      * @namespace appRouter
      * @memberof app
      *
-     * @requires $StateProvider
+     * @requires $stateProvider
      * @requires @urlMatcherFactoryProvider
      *
      * @description
@@ -20,35 +20,20 @@
   function appRouter($stateProvider, $urlMatcherFactoryProvider) {
     $urlMatcherFactoryProvider.strictMode(false);
     $stateProvider
-      .state('login', {
-        url: '/login',
-        views: {
-          root: {
-            templateUrl: 'bundles/login/app.login.view.tpl.html',
-            controller: 'LoginController',
-            controllerAs: 'login'
-          }
-        }
-      })
-
       .state('app', {
         abstract: true,
         views: {
           root: {
-            templateUrl: 'bundles/layout/app.layout.view.tpl.html',
-            controller: 'LayoutController',
-            controllerAs: 'layout'
+            component: 'layout'
           }
         }
       })
 
       .state('app.home', {
-        url: '/dashboard',
+        url: '',
         views: {
           'content@app': {
-            templateUrl: 'bundles/dashboard/app.dashboard.view.tpl.html',
-            controller: 'DashboardController',
-            controllerAs: 'dashboard'
+            component: 'dashboard'
           }
         }
       });
