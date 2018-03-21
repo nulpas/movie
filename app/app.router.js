@@ -43,7 +43,7 @@
       })
 
       .state('app.home', {
-        url: 'app.dashboard',
+        url: '/dashboard',
         views: {
           'content@app': {
             templateUrl: 'bundles/dashboard/app.dashboard.view.tpl.html',
