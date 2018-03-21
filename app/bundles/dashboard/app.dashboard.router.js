@@ -22,9 +22,7 @@
         url: '/dashboard',
         views: {
           'content@app': {
-            templateUrl: 'bundles/dashboard/app.dashboard.view.tpl.html',
-            controller: 'DashboardController',
-            controllerAs: 'dashboard'
+            component: 'dashboard'
           }
         }
       });
