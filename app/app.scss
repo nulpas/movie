@@ -4,4 +4,11 @@
 
 BODY {
   overflow: hidden;
+  font-family: $globalFont;
+  font-size: 1rem;
+  color: $globalFontColor;
+  background-color: $appBackGroundColor;
+  BUTTON, A {
+    outline: 0;
+  }
 }

@@ -1,3 +1,10 @@
 <div id="dashboard-scope">
-  This is Dashboard page.
+  <div class="mp-movies__container">
+    <div
+      class="mdl-shadow--4dp mp-movie__item"
+      data-ng-repeat="(key, movie) in dashboard.moviesList track by key">
+      <img data-ng-src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}">
+      <span data-ng-bind="movie.title"></span>
+    </div>
+  </div>
 </div>

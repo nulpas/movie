@@ -3,4 +3,18 @@
 @import '../../app.variables';
 @import 'dashboard.variables';
 
-#dashboard-scope {}
+#dashboard-scope {
+  @include createFlexBox(row, flex-start, center, wrap);
+  .mp-movies__container {
+    width: 1000px + $moviesListSpaceBetweenCards;
+    @include createFlexBox(row, center, space-between, wrap);
+    .mp-movie__item {
+      width: 500px;
+      margin-bottom: $moviesListSpaceBetweenCards;
+      background-color: #ffffff;
+      IMG {
+        width: 185px;
+      }
+    }
+  }
+}
