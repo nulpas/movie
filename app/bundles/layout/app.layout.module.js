@@ -10,6 +10,7 @@
      * Module Layout definition.
      */
     .module('app.layout', [
-      'app.layout.dashboard'
+      'app.layout.dashboard',
+      'app.layout.movie-detail'
     ]);
 })();

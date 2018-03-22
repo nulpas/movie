@@ -5,13 +5,17 @@ $appBackGroundColor: #f4f4f4;
 
 //# BOX MODEL ##################################################
 $scrollBarWidth: 15px;
-$moviesListSpaceBetweenCards: 30px;
-$moviesListItemWidth: 480px;
+$moviesGridSpaceBetweenCards: 30px;
+$moviesGridItemImageWidth: 185px;
+$moviesGridItemTextWidth: 295px;
+$moviesGridItemTextPadding: 20px;
+$moviesGridItemWidth: $moviesGridItemImageWidth + $moviesGridItemTextWidth;
+$moviesGridItemHeight: 280px;
 
 //# FONTS ######################################################
 $globalFont: 'Ubuntu', sans-serif;
 $globalFontColor: #4d4d4d;
 
 //# @MEDIA QUERIES #############################################
-$mediumScreen: ($moviesListItemWidth * 2) + $moviesListSpaceBetweenCards + $scrollBarWidth;
-$smallScreen: $moviesListItemWidth + $scrollBarWidth;
+$mediumScreen: ($moviesGridItemWidth * 2) + $moviesGridSpaceBetweenCards + $scrollBarWidth;
+$smallScreen: $moviesGridItemWidth + $scrollBarWidth;

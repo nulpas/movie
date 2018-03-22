@@ -35,7 +35,6 @@
         if (value) {
           var _scrollHeight = element.prop('scrollHeight');
           var _availableHeight = element.prop('offsetHeight');
-          console.log(_availableHeight, _scrollHeight);
           if (_availableHeight === _scrollHeight) {
             scope.$broadcast('loadOnFirst', true);
           }
@@ -58,7 +57,8 @@
     }
   }
 
-  function loadOnScroll() {
+  loadOnScroll.$inject = ['mdlImprover'];
+  function loadOnScroll(mdlImprover) {
     return {
       restrict: 'A',
       scope: {
@@ -77,6 +77,7 @@
           scope.loadOnScroll.dataLoader().then(function() {
             scope.$emit('firstLoad', true);
           });
+          mdlImprover.upgradeAll();
         }
       });
 
@@ -84,6 +85,7 @@
         if (value && (scope.loadOnScroll.page < scope.loadOnScroll.totalPages)) {
           scope.loadOnScroll.page ++;
           scope.loadOnScroll.dataLoader();
+          mdlImprover.upgradeAll();
         }
       });
 

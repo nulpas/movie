@@ -10,6 +10,7 @@
    * Module _core definition.
    */
     .module('app._core', [
+      'app._core.mdl-upgrade',
       'app._core.load-on-scroll'
     ]);
 })();
