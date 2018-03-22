@@ -30,3 +30,17 @@
   border-radius: $borderRadius;
   @content;
 }
+
+//# RESPONSIVE #################################################
+
+//## Mixin for build @media query max width type.
+//## PARAMETERS: max-width (without units)
+@mixin mediaQuerySingle($screenWidth) {
+  @media only screen and (max-width: $screenWidth) { @content; }
+}
+
+//## Mixin for build @media query between two values type.
+//## PARAMETERS: max-width (without units), min-width (without units)
+@mixin mediaQueryBetweenValues($screenWidthMax, $screenWidthMin) {
+  @media only screen and (max-width: $screenWidthMax) and (min-width: $screenWidthMin) { @content; }
+}

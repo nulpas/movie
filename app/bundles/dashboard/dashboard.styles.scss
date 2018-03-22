@@ -4,17 +4,29 @@
 @import 'dashboard.variables';
 
 #dashboard-scope {
-  @include createFlexBox(row, flex-start, center, wrap);
+  //@include createFlexBox(row, flex-start, center, wrap);
   .mp-movies__container {
-    width: 1000px + $moviesListSpaceBetweenCards;
+    width: 960px + $moviesListSpaceBetweenCards;
+    margin: 0 auto;
     @include createFlexBox(row, center, space-between, wrap);
     .mp-movie__item {
-      width: 500px;
+      width: $moviesListItemWidth;
       margin-bottom: $moviesListSpaceBetweenCards;
-      background-color: #ffffff;
+      background-color: white;
       IMG {
         width: 185px;
+        height: 280px;
       }
     }
   }
 }
+
+@include mediaQueryBetweenValues($mediumScreen, $smallScreen) {
+  #dashboard-scope {
+    .mp-movies__container {
+      width: 480px;
+    }
+  }
+}
+
+@include mediaQuerySingle($smallScreen) {}

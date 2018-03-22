@@ -4,8 +4,14 @@
 $appBackGroundColor: #f4f4f4;
 
 //# BOX MODEL ##################################################
+$scrollBarWidth: 15px;
 $moviesListSpaceBetweenCards: 30px;
+$moviesListItemWidth: 480px;
 
 //# FONTS ######################################################
 $globalFont: 'Ubuntu', sans-serif;
 $globalFontColor: #4d4d4d;
+
+//# @MEDIA QUERIES #############################################
+$mediumScreen: ($moviesListItemWidth * 2) + $moviesListSpaceBetweenCards + $scrollBarWidth;
+$smallScreen: $moviesListItemWidth + $scrollBarWidth;
