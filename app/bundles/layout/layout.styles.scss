@@ -3,4 +3,10 @@
 @import "../../app.variables";
 @import "layout.variables";
 
-#layout-scope {}
+#layout-scope {
+  MAIN {
+    .page-content {
+      padding-top: 50px;
+    }
+  }
+}

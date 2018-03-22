@@ -13,6 +13,7 @@
       'afs.core',
       //# App Modules
       'app.templateCache',
+      'app._core',
       'app.layout'
     ]);
 })();
