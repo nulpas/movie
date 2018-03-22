@@ -37,7 +37,7 @@
       });
       return $api.getEntity(_entityObject).then(function(success) {
         if (vm.moviesList) {
-          vm.moviesList = vm.moviesList.concat(success.results);
+          vm.moviesList = vm.moviesList.concat(success['results']);
         } else {
           vm.moviesList = success['results'];
           vm.totalPages = success['total_pages'];
