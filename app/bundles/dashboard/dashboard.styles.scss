@@ -1,21 +1,42 @@
 //# IMPORTS ####################################################
 @import '../../app.mixins';
 @import '../../app.variables';
-@import 'dashboard.variables';
 
 #dashboard-scope {
-  //@include createFlexBox(row, flex-start, center, wrap);
   .mp-movies__container {
-    width: 960px + $moviesListSpaceBetweenCards;
+    width: ($moviesGridItemWidth * 2) + $moviesGridSpaceBetweenCards;
     margin: 0 auto;
     @include createFlexBox(row, center, space-between, wrap);
     .mp-movie__item {
-      width: $moviesListItemWidth;
-      margin-bottom: $moviesListSpaceBetweenCards;
+      width: $moviesGridItemWidth;
+      margin-bottom: $moviesGridSpaceBetweenCards;
       background-color: white;
+      @include createFlexBox(row, flex-start, flex-start, nowrap);
       IMG {
-        width: 185px;
-        height: 280px;
+        width: $moviesGridItemImageWidth;
+        height: $moviesGridItemHeight;
+      }
+      .mp-movie__item--text {
+        width: $moviesGridItemTextWidth;
+        height: $moviesGridItemHeight;
+        @include createFlexBox(column, flex-start, space-between, nowrap);
+        .mp-movie__item--info {
+          padding: $moviesGridItemTextPadding;
+          .mp-movie__item--info-header {
+            @include createFlexBox(row, center, space-between, nowrap);
+            .mp-movie__item--vote-average {
+              cursor: help;
+            }
+          }
+          .mp-movie__item--overview {
+            margin-top: 10px;
+          }
+        }
+        .mp-movie__item--link {
+          padding: $moviesGridItemTextPadding;
+          width: calc(100% - (#{$moviesGridItemTextPadding * 2}));
+          border-top: 1px solid lightgray;
+        }
       }
     }
   }
@@ -24,7 +45,7 @@
 @include mediaQueryBetweenValues($mediumScreen, $smallScreen) {
   #dashboard-scope {
     .mp-movies__container {
-      width: 480px;
+      width: $moviesGridItemWidth;
     }
   }
 }

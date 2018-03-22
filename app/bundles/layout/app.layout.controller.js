@@ -6,6 +6,7 @@
     /**
      * @namespace LayoutController
      * @memberof app.layout
+     * @alias layout
      *
      * @description
      * Layout wrap controller definition.

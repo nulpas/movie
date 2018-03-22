@@ -1,0 +1,14 @@
+//# IMPORTS ##########################################
+@import "../../app.mixins";
+@import "../../app.variables";
+
+#movie-detail-scope {
+  .mp-detail__header {
+    background: no-repeat center top;
+    @include applyBackgroundSize(100%, auto);
+    .mp-detail__header--gradient {
+      height: 550px;
+      @include applyRadialGradient(ellipse at 60% 10%, rgba(25, 25, 110, 0.90) 0%, rgba(25, 25, 110, 0.80) 100%);
+    }
+  }
+}

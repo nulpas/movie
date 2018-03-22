@@ -4,8 +4,36 @@
     <div
       class="mdl-shadow--4dp mp-movie__item"
       data-ng-repeat="(key, movie) in dashboard.moviesList track by key">
-      <img data-ng-src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}">
-      <span data-ng-bind="movie.title"></span>
+      <img data-ng-src="https://image.tmdb.org/t/p/w300{{movie['poster_path']}}">
+      <div class="mp-movie__item--text">
+        <div class="mp-movie__item--info">
+          <div class="mp-movie__item--info-header">
+            <div>
+              <div class="mp-title" data-ng-bind="movie.title"></div>
+              <div data-ng-bind="movie['release_date'] | dateMonthReduced"></div>
+            </div>
+            <div
+              id="tooltip-{{key}}"
+              class="material-icons mdl-badge mdl-badge--overlap mp-movie__item--vote-average"
+              data-badge="{{movie['vote_average']}}">
+              movie_filter
+            </div>
+            <div class="mdl-tooltip" data-mdl-for="tooltip-{{key}}">Vote Average</div>
+          </div>
+          <div
+            class="mp-reduced-text-block mp-movie__item--overview"
+            data-ng-bind="movie['overview'] | truncate:{words:25}">
+          </div>
+        </div>
+        <div class="mp-movie__item--link">
+          <a
+            id="link-tooltip-{{key}}"
+            data-ui-sref="app.movieDetail({movieTitle: dashboard.transformUrl(movie.title), movieId: movie.id})">
+            More Details
+          </a>
+          <div class="mdl-tooltip mp-bolder" data-mdl-for="link-tooltip-{{key}}" data-ng-bind="movie.title"></div>
+        </div>
+      </div>
     </div>
   </div>
 

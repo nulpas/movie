@@ -6,15 +6,19 @@
     /**
      * @namespace DashboardController
      * @memberof app.layout.dashboard
+     * @alias dashboard
+     *
+     * @requires $tool
+     * @requires $api
      *
      * @description
      * Dashboard page controller definition.
      */
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['$api'];
+  DashboardController.$inject = ['$tools', '$api'];
 
-  function DashboardController($api) {
+  function DashboardController($tools, $api) {
     /* jshint sub: true */
     /* jscs: disable requireDotNotation */
     var vm = this;
@@ -23,6 +27,7 @@
     vm.totalPages = null;
 
     vm.dataLoader = _dataLoader;
+    vm.transformUrl = $tools.doFriendlyUrl;
     vm.$onInit = _onInitDashboard;
 
     function _dataLoader() {

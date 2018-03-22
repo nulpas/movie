@@ -11,4 +11,19 @@ BODY {
   BUTTON, A {
     outline: 0;
   }
+  A:hover {
+    text-decoration: none;
+  }
+
+  .mp-bolder {
+    font-weight: bolder;
+  }
+  .mp-title {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: black;
+  }
+  .mp-reduced-text-block {
+    font-size: 0.8rem;
+  }
 }

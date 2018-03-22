@@ -22,9 +22,18 @@
   @content;
 }
 
+//## Mixin for setting box sizing.
+//## PARAMETERS: box-sizing
+@mixin boxSizing($boxSizing) {
+  box-sizing: $boxSizing;
+  -moz-box-sizing: $boxSizing;
+  -webkit-box-sizing: $boxSizing;
+  @content;
+}
+
 //## Mixin for setting border radius.
 //## PARAMETERS: border-radius
-@mixin borderRadius($borderRadius){
+@mixin borderRadius($borderRadius) {
   -webkit-border-radius: $borderRadius;
   -moz-border-radius: $borderRadius;
   border-radius: $borderRadius;
@@ -43,4 +52,20 @@
 //## PARAMETERS: max-width (without units), min-width (without units)
 @mixin mediaQueryBetweenValues($screenWidthMax, $screenWidthMin) {
   @media only screen and (max-width: $screenWidthMax) and (min-width: $screenWidthMin) { @content; }
+}
+
+//# IMAGES #####################################################
+
+@mixin applyBackgroundSize($sizeWidth, $sizeHeight) {
+  -webkit-background-size: $sizeWidth $sizeHeight;
+  -moz-background-size: $sizeWidth $sizeHeight;
+  -o-background-size: $sizeWidth $sizeHeight;
+  background-size: $sizeWidth $sizeHeight;
+}
+
+@mixin applyRadialGradient($shape, $colorStop01, $colorStop02) {
+  @content;
+  background-image: -moz-radial-gradient($shape, $colorStop01, $colorStop02);
+  background-image: -webkit-radial-gradient($shape, $colorStop01, $colorStop02);
+  background-image: radial-gradient($shape, $colorStop01, $colorStop02);
 }
