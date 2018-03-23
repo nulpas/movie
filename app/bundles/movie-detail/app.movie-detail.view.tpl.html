@@ -1,6 +1,61 @@
 <div id="movie-detail-scope">
-  <div class="mp-detail__header" style="background-image: url(https://image.tmdb.org/t/p/w1280{{movie.data['backdrop_path']}})">
-    <div class="mp-detail__header--gradient"></div>
+  <div class="mp-detail__header" style="background-image: url({{::movie.backgroundImg}})">
+    <div class="mp-detail__header--gradient">
+      <div class="mp-detail__header--content">
+        <img data-ng-src="https://image.tmdb.org/t/p/w300{{::movie.data['poster_path']}}">
+        <div class="mp-detail__header--info">
+          <div class="mp-title-detail" data-ng-bind="::movie.data.title"></div>
+          <div
+            class="mp-subtitle-detail"
+            data-ng-bind="::movie.data['release_date'] | date : 'yyyy'">
+          </div>
+          <div class="mp-text__section-detail">Overview</div>
+          <div class="mp-text__detail-header" data-ng-bind="::movie.data['overview']"></div>
+          <div class="mp-detail__header--crew">
+            <div data-ng-repeat="(crewKey, crewValue) in movie.crew track by crewKey">
+              <div class="mp-text__section-detail" data-ng-bind="::crewValue.name"></div>
+              <div class="mp-text__detail-header" data-ng-bind="::crewValue.job"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  {{movie.data}}
+  <div class="mp-detail__body">
+    <div class="mp-detail__layout--left">
+      <div class="mp-detail__sub-body">
+        <div class="mp-text__section-detail--black">Main Cast</div>
+        <div class="md-detail__cast">
+          <div class="mdl-shadow--4dp mp-detail__cast-item" data-ng-repeat="(castKey, castValue) in movie.cast track by castKey">
+            <img data-ng-src="https://image.tmdb.org/t/p/w185{{::castValue['profile_path']}}">
+            <div class="md-detail__cast-data">
+              <span class="mp-bolder" data-ng-bind="::castValue.name"></span>
+              <span data-ng-bind="::castValue.character"></span>
+            </div>
+          </div>
+        </div>
+        <div class="mp-text__section-detail--black">Rest of Cast</div>
+        <div class="md-detail__cast">
+          <div class="mdl-shadow--4dp mp-detail__cast-item" data-ng-repeat="(castRestKey, castRestValue) in movie.castRest track by castRestKey">
+            <img data-ng-src="https://image.tmdb.org/t/p/w185{{::castRestValue['profile_path']}}">
+            <div class="md-detail__cast-data">
+              <span class="mp-bolder" data-ng-bind="::castRestValue.name"></span>
+              <span data-ng-bind="::castRestValue.character"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mp-detail__layout--right">
+      <div class="mp-detail__sub-body">
+        <div class="mp-text__section-detail--black">Credits</div>
+        <div class="md-detail__crew-rest">
+          <div class="mp-detail__crew-rest-item" data-ng-repeat="(crewRestKey, crewRestValue) in movie.crewRest track by crewRestKey">
+            <span class="mp-bolder" data-ng-bind="::crewRestValue.name"></span>
+            <span data-ng-bind="::crewRestValue.job"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

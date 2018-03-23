@@ -7,8 +7,104 @@
     background: no-repeat center top;
     @include applyBackgroundSize(100%, auto);
     .mp-detail__header--gradient {
-      height: 550px;
-      @include applyRadialGradient(ellipse at 60% 10%, rgba(25, 25, 110, 0.90) 0%, rgba(25, 25, 110, 0.80) 100%);
+      @include applyRadialGradient(ellipse at 60% 10%, rgba(51, 51, 51, 0.90) 0%, rgba(51, 51, 51, 0.80) 100%);
+      .mp-detail__header--content {
+        width: ($moviesGridItemWidth * 2) + $moviesGridSpaceBetweenCards;
+        margin: 0 auto;
+        padding: 50px 0 50px 0;
+        @include createFlexBox(row, flex-start, flex-start, nowrap);
+        IMG {
+          width: 300px;
+          height: 450px;
+        }
+        .mp-detail__header--info {
+          width: ($moviesGridItemWidth * 2) + $moviesGridSpaceBetweenCards - 300px;
+          padding: 20px 0 0 50px;
+        }
+        .mp-subtitle-detail, .mp-text__detail-header {
+          margin-top: 10px;
+        }
+        .mp-text__section-detail {
+          margin-top: 50px;
+        }
+        .mp-detail__header--crew {
+          @include createFlexBox(row, center, space-between, wrap);
+          & > DIV {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .mp-detail__body {
+    @include createFlexBox(row, flex-start, flex-start, nowrap);
+    .mp-detail__layout--left {
+      width: 65%;
+      @include createFlexBox(row, center, flex-end, nowrap);
+      .mp-detail__sub-body {
+        width: 740px;
+        height: 100%;
+        margin: 40px 40px 0 0;
+        .md-detail__cast {
+          @include createFlexBox(row, flex-start, flex-end, wrap);
+          .mp-detail__cast-item {
+            width: 138px;
+            margin: 20px 10px 20px 0;
+            .md-detail__cast-data {
+              padding: 10px;
+              & > SPAN {
+                display: block;
+              }
+            }
+            IMG {
+              width: 138px;
+              height: 175px;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+    .mp-detail__layout--right {
+      width: 35%;
+      height: 100%;
+      background-color: #cccccc;
+      .mp-detail__sub-body {
+        width: 180px;
+        margin: 40px 0 0 40px;
+        .md-detail__crew-rest {
+          margin-top: 20px;
+          .mp-detail__crew-rest-item {
+            margin-bottom: 10px;
+            & > SPAN {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mediaQuerySingle(980px) {
+  #movie-detail-scope {
+    .mp-detail__header {
+      @include applyBackgroundSize(auto, 100%);
+      .mp-detail__header--gradient {
+        .mp-detail__header--content {
+          padding: 0;
+          width: 100%;
+          @include createFlexBox(row, flex-start, center, wrap);
+          .mp-detail__header--info {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    .mp-detail__body {
+      @include createFlexBox(row, flex-start, flex-start, wrap);
     }
   }
 }

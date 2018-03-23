@@ -3,7 +3,8 @@
 @import '../../app.variables';
 
 #dashboard-scope {
-  .mp-movies__container {
+  margin-top: 50px;
+  .mp-movies__container, .mp-movies__filter {
     width: ($moviesGridItemWidth * 2) + $moviesGridSpaceBetweenCards;
     margin: 0 auto;
     @include createFlexBox(row, center, space-between, wrap);

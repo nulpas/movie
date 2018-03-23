@@ -70,22 +70,24 @@
     function _loadOnScrollLink(scope, element) {
       angular.element(function() {
         scope.$emit('firstLoad', true);
+        mdlImprover.upgradeAll();
       });
       scope.$on('loadOnFirst', function(e, value) {
         if (value) {
           scope.loadOnScroll.page ++;
           scope.loadOnScroll.dataLoader().then(function() {
             scope.$emit('firstLoad', true);
+            mdlImprover.upgradeAll();
           });
-          mdlImprover.upgradeAll();
         }
       });
 
       scope.$on('loadOn', function(e, value) {
         if (value && (scope.loadOnScroll.page < scope.loadOnScroll.totalPages)) {
           scope.loadOnScroll.page ++;
-          scope.loadOnScroll.dataLoader();
-          mdlImprover.upgradeAll();
+          scope.loadOnScroll.dataLoader().then(function() {
+            mdlImprover.upgradeAll();
+          });
         }
       });
 
