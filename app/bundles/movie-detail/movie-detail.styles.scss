@@ -102,9 +102,5 @@
         }
       }
     }
-
-    .mp-detail__body {
-      @include createFlexBox(row, flex-start, flex-start, wrap);
-    }
   }
 }
