@@ -1,7 +1,7 @@
 {
   "name": "movies-pas",
   "description": "Test App about Movies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "",
   "repository": {
     "type": "git",
@@ -17,11 +17,11 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular-toolpas": "^0.10.11"
+    "angular-toolpas": "^0.10.15"
   },
   "devDependencies": {},
   "resolutions": {
-    "angular": "^1.6.9"
+    "angular": "^1.6.10"
   },
   "overrides": {
     "overrides": {

@@ -1,7 +1,7 @@
 {
   "name": "movies-pas",
   "description": "Test App about Movies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "build": "gulp deploy:dist"
   },
   "dependencies": {
-    "gulp-compiler": "^0.7.10"
+    "gulp-compiler": "^0.8.6"
   },
   "devDependencies": {}
 }
